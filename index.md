@@ -32,9 +32,11 @@ For your second milestone, explain what you've worked on since your previous mil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # First Milestone
+My first milestone was achived when I manged to control my arm manually and pick up a paper cylinder. I did this by first assembling the arm and utilizing the 3 servo pivots to manuver my arm in various directions. I had to wire the joysticks to the board in the correct order to make sure the movments matched. My plan to complelte the project is to put the arm on wheels and give it more strenght to pick up heavier objects and have more movement. 
+
 For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
+- Technical progress you've made so far 
 - Challenges you're facing and solving in your future milestones
 - What your plan is to complete your project
 
