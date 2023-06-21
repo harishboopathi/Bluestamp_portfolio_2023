@@ -5,7 +5,7 @@ Replace this text with a brief description (2-3 sentences) of your project. This
 |:--:|:--:|:--:|:--:|
 | Harish B | Mission San Jose High | Mechanical Engineering | Incoming jounior 
 
-![Headstone Image](Harish-Headshot.png)
+![Headstone Image](Harish-Headshotr.png)
   
 # Final Milestone
 For your final milestone, explain the outcome of your project. Key details to include are:
