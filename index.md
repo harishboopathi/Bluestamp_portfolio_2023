@@ -36,7 +36,9 @@ For your second milestone, explain what you've worked on since your previous mil
 My first milestone was achieved when I managed to control my arm manually and pick up a paper cylinder. I did this by first assembling the arm and utilizing the 3 servo pivots to maneuver my arm in various directions. 
 ## Components 
 Servos - these are what move the arm, they are programmed to move from anywhere from 0-180 degrees.
+
 Arduino Nano - this is what takes the code and inputs and tells certain pins on the Arduino to power, essentially it moves and controls the servos. The Arduino nano has pins on the bottom which vary from grounding, 5-volt power, reading and transmitting data, and data ports. The data ports are used to receive and send signals to the different things connected to it for example in my case how much to move the servo. Also, It can be used to receive, when it takes the input of the joystick.
+
 Arduino Nano shield - this takes the pins of the Arduino and expands it to be more user-friendly. It also adds the necessary components to input more power into the system as the servos need more than the 5v that the Arduino provides. I used this to plug in my servos and also used this to add my 9v power supply.
 ## Challenges
 One main challenge I faced was trying to add my Bluetooth module to control the arm using a phone app. When trying to connect the first issue I encountered was that I was unable to build my code onto the Arduino. The reason for this was I was plugging the bluetooth modules transmitting data cable into the default read data pin on the Arduino. This meant that the Arduino wasn't reading the code I was uploading but the bluetooth module was instead so the code didn't upload. 
@@ -51,10 +53,15 @@ My next step for this project is to create a wireless controller as right now th
 For my starter project I built a Simon says game. The game works by pushing the rubber pad onto the motherboard to complete the circuit allowing the microcontroller to understand that the button has been pressed. The goal is to click the colors in the order the game displays them using the LEDs. 
 ## Components 
 ATmega328 - this is the brains of the game and holds the code which is preprogrammed in.
+
 10k resistor - this makes sure that the whole circuit isn't overloaded from the power being inputted. It takes the power and only lets some pass and lets the rest go as heat
+
 Through-hole PCB - this connects all the components together in an organized manner.
+
 Battery clips - this takes the battery charge and inputs it into the PCB. It acts as a bridge for the battery to the PCB
-Slide switch - this turns on and off certain parts of the PCB, for example, the power and sound. I simply just breaks and connects different circuts
+
+Slide switch - this turns on and off certain parts of the PCB, for example, the power and sound. I simply just break and connects different circuits
+
 0.1μF Capacitor - this stores and releases energy 
 ## Challenges
 The only challenge I faced was understanding which sides are positive and negative since they were not labeled, and to identify them I used a multimeter and used black and red pins to check continuity.
