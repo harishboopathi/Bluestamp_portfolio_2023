@@ -7,7 +7,7 @@ Replace this text with a brief description (2-3 sentences) of your project. This
 |:--:|:--:|:--:|:--:|
 | Harish B | Mission San Jose High | Mechanical Engineering | Incoming jounior 
 
-<img src="Harish-Headshot.png"  width="600" height="300">
+<img src="Harish-Headshot.png"  width="300" height="300">
   
 # Final Milestone
 <!---
