@@ -33,14 +33,23 @@ For your second milestone, explain what you've worked on since your previous mil
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 -->
-
+## Summary
+My second milestone was achieved when I acomplished my goal of carrying two AA batteries using my claw and strenghthened my arm to carry much more.
+## Components
+1. Arduino Mega - This is the controller of the arm, it takes in the inputs of the joysticks and using the programmed code sends a signal to the servos to move that much. It has much more of the same pins than the Arduino nano allowing for more components to be added
+2. MG996R Servos - These servos move the diffrent components of the arm and are much more powerful than the pervious 5g servos allowing much more weight
+## Challenges
+A challenge I occured was when assembling the parts after designing them, they were hard to put toghther due to them being exact measurment. This was caused because 3d-printers arent always accurate. I fixed this in the future by adding tolarances which mean making the holes slightly larger while cadding so that they will fit once being printed
+## Next steps
+My next step is to make the controller and joysticks wireless, then put the whole arm on wheels to add more manvuerability to the arm. 
 # First Milestone
 ## Summary
 My first milestone was achieved when I managed to control my arm manually and pick up a paper cylinder. I did this by first assembling the arm and utilizing the 3 servo pivots to maneuver my arm in various directions. 
 ## Components 
-1. Servos - these are what move the arm, they are programmed to move from anywhere from 0-180 degrees.
+1. 5g Servos - these are what move the arm, they are programmed to move from anywhere from 0-180 degrees.
 2. Arduino Nano - this is what takes the code and inputs and tells certain pins on the Arduino to power, essentially it moves and controls the servos. The Arduino nano has pins on the bottom which vary from grounding, 5-volt power, reading and transmitting data, and data ports. The data ports are used to receive and send signals to the different things connected to it for example in my case how much to move the servo. Also, It can be used to receive, when it takes the input of the joystick.
 3. Arduino Nano shield - this takes the pins of the Arduino and expands it to be more user-friendly. It also adds the necessary components to input more power into the system as the servos need more than the 5v that the Arduino provides. I used this to plug in my servos and also used this to add my 9v power supply.
+4. Joysticks - This turns the hand movments into signals that the arduino can understand and is used to control the arm
 ## Challenges
 One main challenge I faced was trying to add my Bluetooth module to control the arm using a phone app. When trying to connect the first issue I encountered was that I was unable to build my code onto the Arduino. The reason for this was I was plugging the bluetooth modules transmitting data cable into the default read data pin on the Arduino. This meant that the Arduino wasn't reading the code I was uploading but the bluetooth module was instead so the code didn't upload. 
 ## Next steps
