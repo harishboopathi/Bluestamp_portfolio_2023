@@ -1,4 +1,4 @@
-# 3-Jointed robotic arm
+  # 3-Jointed robotic arm
 <!---
 Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
 -->
@@ -45,11 +45,12 @@ My second milestone was achieved when I accomplished my goal of adding wheels to
 This all works together starting at the joysticks where once detected input will send it into the Arduino mega. The Arduino Mega now takes in the joystick input and turns it into something that the H bridge can understand and sends it to the H bridge. The H bridge now takes the input from the Arduino Mega and sends it to the two dc motors that are connected to it and the dc motors turn the mechanum wheels that are attached to it 
 
 ## Progress 
+My customizations have gone decently well, I started with designing and 3D-printing a stronger arm with stronger servos to hold stronger things, however, the coding of the arm didn't work so I was unable to get the arm working. Then I decided to give the claw more movement as I've added wheels to the base of the arm in order to move it more.
 
 ## Challenges
 My main challenge was coding my modified arm, I was using the previous arms code however the one I designed had 2 servos for more power on the claw and one of the servos were in the opposite direction. After assembling the arm and beginning to code the arm I realized the code was very hard to understand as it had no documentation as to how the custom libraries that the default arm had worked which was difficult for me. 
 ## Next steps
-My next step is to make the controller and joysticks wireless, then put the whole arm on wheels to add more maneuverability to the arm. 
+My next step is to make the controller and joysticks wireless as the messy wiring makes it aesthetically unpleasant and restricts the distance I have to be from the claw. 
 # First Milestone
 ## Summary
 My first milestone was achieved when I managed to control my arm manually and pick up a paper cylinder. I did this by first assembling the arm and utilizing the 3 servo pivots to maneuver my arm in various directions. 
