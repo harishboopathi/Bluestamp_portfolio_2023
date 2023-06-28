@@ -34,10 +34,12 @@ For your second milestone, explain what you've worked on since your previous mil
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 -->
 ## Summary
-My second milestone was achieved when I acomplished my goal of carrying two AA batteries using my claw and strenghthened my arm to carry much more.
+My second milestone was achieved when I accomplished my goal of adding wheels to the claw in order to have more movement. The claw originally was only able to pick up things near it and that severely held it back from doing anything, and I fixed this by designing a chassis in Fusion 360 and 3D-printing it to hold the claw on the back while being able to move in a direction I pleased in order for the claw to pick up more items.  
 ## Components
-1. Arduino Mega - This is the controller of the arm, it takes in the inputs of the joysticks and using the programmed code sends a signal to the servos to move that much. It has much more of the same pins than the Arduino nano allowing for more components to be added
-2. MG996R Servos - These servos move the diffrent components of the arm and are much more powerful than the pervious 5g servos allowing much more weight
+1. Arduino Mega - This is the controller of the arm, it takes in the inputs of the joysticks and using the programmed code sends a signal to the servos to move that much. It has much more of the same pins than the Arduino Nano allowing for more components to be added
+2. L298N motor driver - This motor driver controls the direction and power of the dc motors that are on the chassis.
+3. Dc motors - These motors are more powerful than servos and are used to move my wheels since they have a continuous rotation unlike servos which only go from 0-270
+4. Mehcanum wheels - These are wheels that have a special roller on their outer diameter allowing them when all four spun in a certain direction they move side to side in what's known as strafing. 
 ## Challenges
 A challenge I occured was when assembling the parts after designing them, they were hard to put toghther due to them being exact measurment. This was caused because 3d-printers arent always accurate. I fixed this in the future by adding tolarances which mean making the holes slightly larger while cadding so that they will fit once being printed
 ## Next steps
