@@ -21,6 +21,20 @@ For your final milestone, explain the outcome of your project. Key details to in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 -->
+## Summary
+My final milestone was achieved when I made my chassis able to move using wireless communication. Previously I had all the joysticks wired directly into the onboard Arduino, however now I have used a wireless module to wire all the joysticks to a separate Arduino, making the two arduinos communicate with each other.
+
+## Components 
+1. nRF24L01+ modules - This is what allowed the two arduinos to communicate with each other
+
+How all these components work together is that the joysticks are wired to the Arduino Nano along with the nRF24L01+ module. Now this nRF24L01+ module sends a signal to the other nRF24L01+ module that is connected to the Arduino Mega onboard the chassis. Then through coding, the nano takes in the joystick values, compresses them then sends the values into the mega. The mega now takes in the values and then sends them to the motors to move in that specific direction. 
+
+## Progress 
+This was my final milestone, so I have accomplished everything I wanted to. However, I was unable to complete the coding of my arm I plan on completing that in my own time.
+
+## Challenges
+My challenge was getting the two nRF24L01+ modules to communicate with each other. It took many hours of research to figure out that I was not using the default sck, mosi, and miso so the data never got to the arduino.
+
 
 # Second Milestone
 <iframe width="560" height="315" src="https://www.youtube.com/embed/B5Mugl8oNbk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -32,7 +46,7 @@ My second milestone was achieved when I accomplished my goal of adding wheels to
 1. Arduino Mega - This is the controller of the arm, it takes in the inputs of the joysticks and using the programmed code sends a signal to the servos to move that much. It has much more of the same pins than the Arduino Nano allowing for more components to be added
 2. L298N motor driver - This motor driver controls the direction and power of the dc motors that are on the chassis.
 3. Dc motors - These motors are more powerful than servos and are used to move my wheels since they have a continuous rotation unlike servos which only go from 0-270
-4. Mehcanum wheels - These are wheels that have a special roller on their outer diameter allowing them when all four spun in a certain direction they move side to side in what's known as strafing.
+4. Mehcanum wheels - These are wheels that have a unique roller on their outer diameter allowing them when all four spun in a certain direction they move side to side in what's known as strafing.
 
 This all works together starting at the joysticks where once detected input will send it into the Arduino mega. The Arduino Mega now takes in the joystick input and turns it into something that the H bridge can understand and sends it to the H bridge. The H bridge now takes the input from the Arduino Mega and sends it to the two dc motors that are connected to it and the dc motors turn the mechanum wheels that are attached to it 
 
@@ -56,11 +70,13 @@ My first milestone was achieved when I managed to control my arm manually and pi
 3. Arduino Nano shield - this takes the pins of the Arduino and expands it to be more user-friendly. It also adds the necessary components to input more power into the system as the servos need more than the 5v that the Arduino provides. I used this to plug in my servos and also used this to add my 9v power supply.
 4. Joysticks - This turns the hand movements into signals that the Arduino can understand and is used to control the arm
 
+How this all works together is that the joysticks send a signal into the Arduino nano shield, then that Arduino nano takes the input from the arduino shield and turns it into the right servo movement from the code uploaded to the Arduino nano and sends a signal to the servos to move to that position. 
+
 ## Challenges
 One main challenge I faced was trying to add my Bluetooth module to control the arm using a phone app. When trying to connect the first issue I encountered was that I was unable to build my code onto the Arduino. The reason for this was I was plugging the bluetooth modules transmitting data cable into the default read data pin on the Arduino. This meant that the Arduino wasn't reading the code I was uploading but the bluetooth module was instead so the code didn't upload.
 
 ## Next steps
-My next step for this project is to create a wireless controller as right now the joysticks have to be plugged into the Arduino sheild which is very inconvenient. I also am going to strengthen the arm to hold at least two AA batteries along with putting it on wheels to add more maneuverability to the arm.
+My next step for this project is to create a wireless controller as right now the joysticks have to be plugged into the Arduino shield which is very inconvenient. I also am going to strengthen the arm to hold at least two AA batteries along with putting it on wheels to add more maneuverability to the arm.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bRiTaQy16FM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
