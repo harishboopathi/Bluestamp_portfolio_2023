@@ -365,11 +365,10 @@ digitalWrite(in1Pin, LOW);
     digitalWrite(in8Pin, LOW);
      }
 }
-}
 ```
 # Bill of Materials
 | **Part** | **Note** | **Price** | **Link** |
-| ---- | ---- | ---- | ---- |
+|:--:|:--:|:--:|:--:|
 | Arduino Mega | Controlling the diffrent components on the project chassis | $20.99 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Projects-Compliant/dp/B01H4ZLZLQ/ref=asc_df_B01H4ZLZLQ/?tag=hyprod-20&linkCode=df0&hvadid=309743296044&hvpos=&hvnetw=g&hvrand=12020245290984826104&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-490931309987&psc=1"> Link </a> |
 | Arduino Nano | Controlling the diffrent components on the transmitter | $10.99 | <a href="https://www.amazon.com/ATmega328P-Microcontroller-Board-Cable-Arduino/dp/B00NLAMS9C/ref=asc_df_B00NLAMS9C/?tag=hyprod-20&linkCode=df0&hvadid=309776868400&hvpos=&hvnetw=g&hvrand=13247452225808741269&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-593018008274&psc=1"> Link </a> |
 | Joysticks | inputing commands into the arduino from finger movements  | $8.99 | <a href="https://www.amazon.com/Joystick-Controller-Compatible-Raspberry-PlayStation-2/dp/B0BFQTLM5T/ref=asc_df_B0BFQTLM5T/?tag=hyprod-20&linkCode=df0&hvadid=642135768472&hvpos=&hvnetw=g&hvrand=13644171287524340115&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-1948409564586&psc=1&gclid=CjwKCAjw44mlBhAQEiwAqP3eVoPFrTldpZcr07SQ8AAIVws4saFl-DYrku3biS5c-wGW6YBDUAnmWxoCAzAQAvD_BwE"> Link </a> |
