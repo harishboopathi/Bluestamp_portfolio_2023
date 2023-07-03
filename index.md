@@ -1,26 +1,11 @@
-  # 3-Jointed robotic arm
-<!---
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
--->
-
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Harish B | Mission San Jose High | Mechanical Engineering | Incoming jounior 
 
-<img src="Harish-Headshot.png"  width="300" height="300">
+<img src="Harish-Headshot.png"  width="350" height="350">
   
 # Final Milestone
-<!---
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
--->
 ## Summary
 My final milestone was achieved when I made my chassis able to move using wireless communication. Previously I had all the joysticks wired directly into the onboard Arduino, however now I have used a wireless module to wire all the joysticks to a separate Arduino, making the two arduinos communicate with each other.
 
@@ -61,6 +46,7 @@ My main challenge was coding my modified arm, I was using the previous arms code
 
 ## Next steps
 My next step is to make the controller and joysticks wireless as the messy wiring makes it aesthetically unpleasant and restricts the distance I have to be from the claw.
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7PaMYvwxk2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 # First Milestone
@@ -73,7 +59,10 @@ My first milestone was achieved when I managed to control my arm manually and pi
 3. Arduino Nano shield - this takes the pins of the Arduino and expands it to be more user-friendly. It also adds the necessary components to input more power into the system as the servos need more than the 5v that the Arduino provides. I used this to plug in my servos and also used this to add my 9v power supply.
 4. Joysticks - This turns the hand movements into signals that the Arduino can understand and is used to control the arm
 
-How this all works together is that the joysticks send a signal into the Arduino nano shield, then that Arduino nano takes the input from the arduino shield and turns it into the right servo movement from the code uploaded to the Arduino nano and sends a signal to the servos to move to that position. 
+How this all works together is that the joysticks send a signal into the Arduino nano shield, then that Arduino nano takes the input from the arduino shield and turns it into the right servo movement from the code uploaded to the Arduino nano and sends a signal to the servos to move to that position.
+
+## Progress 
+I finished the base arm but realised that It was unable to move to pick up items out of its reach so I plan on addressing that in the future
 
 ## Challenges
 One main challenge I faced was trying to add my Bluetooth module to control the arm using a phone app. When trying to connect the first issue I encountered was that I was unable to build my code onto the Arduino. The reason for this was I was plugging the bluetooth modules transmitting data cable into the default read data pin on the Arduino. This meant that the Arduino wasn't reading the code I was uploading but the bluetooth module was instead so the code didn't upload.
