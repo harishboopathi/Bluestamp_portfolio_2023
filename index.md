@@ -369,7 +369,9 @@ digitalWrite(in1Pin, LOW);
 ```
 # Bill of Materials
 | **Part** | **Note** | **Price** | **Link** |
+
 |:--:|:--:|:--:|:--:|
+
 | Arduino Mega | Controlling the diffrent components on the project chassis | $20.99 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Projects-Compliant/dp/B01H4ZLZLQ/ref=asc_df_B01H4ZLZLQ/?tag=hyprod-20&linkCode=df0&hvadid=309743296044&hvpos=&hvnetw=g&hvrand=12020245290984826104&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-490931309987&psc=1"> Link </a> |
 
 | Arduino Nano | Controlling the diffrent components on the transmitter | $10.99 | <a href="https://www.amazon.com/ATmega328P-Microcontroller-Board-Cable-Arduino/dp/B00NLAMS9C/ref=asc_df_B00NLAMS9C/?tag=hyprod-20&linkCode=df0&hvadid=309776868400&hvpos=&hvnetw=g&hvrand=13247452225808741269&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-593018008274&psc=1"> Link </a> |
