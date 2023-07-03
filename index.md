@@ -33,7 +33,10 @@ How all these components work together is that the joysticks are wired to the Ar
 This was my final milestone, so I have accomplished everything I wanted to. However, I was unable to complete the coding of my arm I plan on completing that in my own time.
 
 ## Challenges
-My challenge was getting the two nRF24L01+ modules to communicate with each other. It took many hours of research to figure out that I was not using the default sck, mosi, and miso so the data never got to the arduino.
+My challenge was getting the two nRF24L01+ modules to communicate with each other. It took many hours of research to figure out that I was not using the default sck, mosi, and miso so the data never got to the Arduino.
+
+## Next steps 
+My next step is to complete the code for my custom arm and attach it onto my chassis where the old arm currently is.
 
 
 # Second Milestone
@@ -109,15 +112,272 @@ Here's where you'll put images of your schematics. [Tinkercad](https://www.tinke
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
 ```c++
+//Transmitter code onboard the arduino nano
+
+#include <SPI.h>
+#include <RF24.h>
+#include <nRF24L01.h>
+
+RF24 radio(9, 8); // CE, CSN
+const byte address[10] = "ADDRESS01";
+
+
+
+int joystickValue;
+int joystickValue1;
+int joystickValue2;
+int joystickValues;
+int joystickValue1s;
+int joystickValue2s;
 void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+
+ Serial.begin(9600);
+  radio.begin();
+  radio.openWritingPipe(address);
+  radio.setPALevel(RF24_PA_MIN);
+  radio.stopListening();
+pinMode(A0, INPUT);
+pinMode(A1, INPUT);
+pinMode(A2, INPUT);
+pinMode(A3, INPUT);
+pinMode(A4, INPUT);
+pinMode(A5, INPUT);
+//Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+const char back = 'b'; 
+const char stop = 's'; 
+const char forward = 'f'; 
+const char right = 'r'; 
+const char left = 'l';
+const char turn = 't';
+const char turt = 'y'; 
+  joystickValue = analogRead(A0);
+  joystickValues = analogRead(A1);
+  joystickValue1 = analogRead(A2);
+  joystickValue1s = analogRead(A3);
+  joystickValue2 = analogRead(A4);
+  joystickValue2s = analogRead(A5);
 
+
+//Serial.println(joystickValue2s); 
+  if (joystickValue2s <= 150) {
+    delay(500);
+    radio.write(&forward, sizeof(forward));
+    //Serial.println("FORWARD");
+  }
+  if (joystickValue2s >= 700) {
+    radio.write(&back, sizeof(back));
+    delay(500);
+    //Serial.println("BACK"); 
+  }
+  if (joystickValue2s >150 && joystickValue2s <700 && joystickValue2 >150 && joystickValue2 <700 ) {
+    //Serial.println("STOP");
+    radio.write(&stop, sizeof(stop));
+  
+  }
+  if (joystickValue2 <= 150) {
+    //Serial.println("RIGHT");
+    radio.write(&right, sizeof(right));
+    delay(500);
+  }
+  if (joystickValue2 >= 700) {
+    //Serial.println("LEFT");
+    radio.write(&left, sizeof(left));
+    delay(500);
+  }
+  if (joystickValue1 <= 150) {
+    Serial.println("turn");
+    radio.write(&turn, sizeof(turn));
+    delay(500);
+  }
+  if (joystickValue1s >= 700) {
+    Serial.println("turt");
+    radio.write(&turt, sizeof(turt));
+    delay(500);
+  }
+}
+// Receiver code onboard the Arduino mega
+#include "src/CokoinoArm.h"
+#define buzzerPin 9
+#include <SPI.h>
+#include <RF24.h>
+#include <nRF24L01.h>
+#include <Arduino.h>
+int in1Pin = 37;
+int in2Pin = 33;
+int in3Pin = 31;
+int in4Pin = 35;
+int in5Pin = 30;
+int in6Pin = 32;
+int in7Pin = 34;
+int in8Pin = 36;
+int motorPWMSpeed = 0;
+char txt;
+RF24 radio(7, 8); // CE, CSN
+const byte address[10] = "ADDRESS01";
+
+CokoinoArm arm;
+int xL,yL,xR,yR;
+
+const int act_max=10;    //Default 10 action,4 the Angle of servo
+int act[act_max][4];    //Only can change the number of action
+int num=0,num_do=0;
+
+///////////////////////////////////////////////////////////////
+void turnUD(void){
+  if(xL!=512){
+    if(0<=xL && xL<=100){arm.up(10);return;}
+    if(900<xL && xL<=1024){arm.down(10);return;} 
+    if(100<xL && xL<=200){arm.up(20);return;}
+    if(800<xL && xL<=900){arm.down(20);return;}
+    if(200<xL && xL<=300){arm.up(25);return;}
+    if(700<xL && xL<=800){arm.down(25);return;}
+    if(300<xL && xL<=400){arm.up(30);return;}
+    if(600<xL && xL<=700){arm.down(30);return;}
+    if(400<xL && xL<=480){arm.up(35);return;}
+    if(540<xL && xL<=600){arm.down(35);return;} 
+    }
+}
+///////////////////////////////////////////////////////////////
+void turnLR(void){
+  if(yL!=512){
+    if(0<=yL && yL<=100){arm.right(0);return;}
+    if(900<yL && yL<=1024){arm.left(0);return;}  
+    if(100<yL && yL<=200){arm.right(5);return;}
+    if(800<yL && yL<=900){arm.left(5);return;}
+    if(200<yL && yL<=300){arm.right(10);return;}
+    if(700<yL && yL<=800){arm.left(10);return;}
+    if(300<yL && yL<=400){arm.right(15);return;}
+    if(600<yL && yL<=700){arm.left(15);return;}
+    if(400<yL && yL<=480){arm.right(20);return;}
+    if(540<yL && yL<=600){arm.left(20);return;}
+  }
+}
+///////////////////////////////////////////////////////////////
+void turnCO(void){
+  if(xR!=512){
+    if(0<=xR && xR<=100){arm.close(0);return;}
+    if(900<xR && xR<=1024){arm.open(0);return;} 
+    if(100<xR && xR<=200){arm.close(5);return;}
+    if(800<xR && xR<=900){arm.open(5);return;}
+    if(200<xR && xR<=300){arm.close(10);return;}
+    if(700<xR && xR<=800){arm.open(10);return;}
+    if(300<xR && xR<=400){arm.close(15);return;}
+    if(600<xR && xR<=700){arm.open(15);return;}
+    if(400<xR && xR<=480){arm.close(20);return;}
+    if(540<xR && xR<=600){arm.open(20);return;} 
+    }
+}
+///////////////////////////////////////////////////////////////
+void date_processing(int *x,int *y){
+  if(abs(512-*x)>abs(512-*y))
+    {*y = 512;}
+  else
+    {*x = 512;}
+}
+void setup() {
+  Serial.begin(9600);
+  radio.begin();
+  radio.openReadingPipe(0, address);
+  radio.setPALevel(RF24_PA_MIN);
+  radio.startListening();
+  //Serial.begin(9600);
+  //arm of servo motor connection pins
+  arm.ServoAttach(9,10,11,12);
+  //arm of joy stick connection pins : xL,yL,xR,yR
+  arm.JoyStickAttach(A0,A1,A2,A3);
+  //pinMode(buzzerPin,OUTPUT);
+  pinMode(in1Pin, OUTPUT);
+  pinMode(in2Pin, OUTPUT);
+  pinMode(in3Pin, OUTPUT);
+  pinMode(in4Pin, OUTPUT);
+  pinMode(in5Pin, OUTPUT);
+  pinMode(in6Pin, OUTPUT);
+  pinMode(in7Pin, OUTPUT);
+  pinMode(in8Pin, OUTPUT);
+  
+}
+///////////////////////////////////////////////////////////////
+void loop() {
+  xL = arm.JoyStickL.read_x();
+  yL = arm.JoyStickL.read_y();
+  xR = arm.JoyStickR.read_x();
+  yR = arm.JoyStickR.read_y();
+  date_processing(&xL,&yL);
+  date_processing(&xR,&yR);
+  turnUD();
+  turnLR();
+  turnCO();
+
+    //char txt = "";
+    radio.read(&txt,1);
+    Serial.println(txt);
+    if (txt == 'b') {
+    digitalWrite(in1Pin, HIGH);
+    digitalWrite(in2Pin, LOW);
+     digitalWrite(in3Pin, LOW);
+    digitalWrite(in4Pin, HIGH);
+    digitalWrite(in5Pin, LOW);
+    digitalWrite(in6Pin, HIGH);
+     digitalWrite(in7Pin, HIGH);
+    digitalWrite(in8Pin, LOW);
+    Serial.println("BLAH");
+    }
+     if (txt == 's') {
+       Serial.println("SBLATYH");
+       digitalWrite(in1Pin, LOW);
+    digitalWrite(in2Pin, LOW); 
+    digitalWrite(in3Pin, LOW);
+    digitalWrite(in4Pin, LOW);
+    digitalWrite(in5Pin, LOW);
+    digitalWrite(in6Pin, LOW); 
+    digitalWrite(in7Pin, LOW);
+    digitalWrite(in8Pin, LOW);
+     }
+     if (txt == 'f'){
+       Serial.println("Bblah");
+       digitalWrite(in1Pin, LOW);
+    digitalWrite(in2Pin, HIGH);
+    digitalWrite(in3Pin, HIGH);
+    digitalWrite(in4Pin, LOW);
+    digitalWrite(in5Pin, HIGH);
+    digitalWrite(in6Pin, LOW);
+    digitalWrite(in7Pin, LOW);
+    digitalWrite(in8Pin, HIGH); 
+     }
+     if (txt == 'l') {
+digitalWrite(in1Pin, LOW);
+    digitalWrite(in2Pin, HIGH);
+     digitalWrite(in3Pin, LOW);
+    digitalWrite(in4Pin, HIGH);
+    digitalWrite(in5Pin, HIGH);
+    digitalWrite(in6Pin, LOW);
+     digitalWrite(in7Pin, HIGH);
+    digitalWrite(in8Pin, LOW);
+     }
+     if (txt == 'r') {
+       digitalWrite(in1Pin, HIGH);
+      digitalWrite(in2Pin, LOW);
+      digitalWrite(in3Pin, HIGH);
+      digitalWrite(in4Pin, LOW);
+      digitalWrite(in5Pin, LOW);
+      digitalWrite(in6Pin, HIGH);
+      digitalWrite(in7Pin, LOW);
+      digitalWrite(in8Pin, HIGH);
+     }
+     if (txt == 't'){
+       digitalWrite(in1Pin, LOW);
+    digitalWrite(in2Pin, HIGH);
+    digitalWrite(in3Pin, HIGH);
+    digitalWrite(in4Pin, LOW);
+       digitalWrite(in5Pin, LOW);
+    digitalWrite(in6Pin, HIGH);
+     digitalWrite(in7Pin, HIGH);
+    digitalWrite(in8Pin, LOW);
+     }
+}
 }
 ```
 -->
@@ -127,7 +387,7 @@ Here's where you'll list the parts in your project. To add more rows, just copy 
 Don't forget to place the link of where to buy each component inside the quotation marks in the corresponding row after href =. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize this to your project needs. 
 
 | **Part** | **Note** | **Price** | **Link** |
-|:--:|:--:|:--:|:--:|
+|rahhhhhhhhh|:--:|:--:|:--:|
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
 |:--:|:--:|:--:|:--:|
 | Item Name | What the item is used for | $Price | <a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/"> Link </a> |
