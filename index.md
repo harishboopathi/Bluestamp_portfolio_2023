@@ -2,9 +2,10 @@
 |:--:|:--:|:--:|:--:|
 | Harish B | Mission San Jose High | Mechanical Engineering | Incoming jounior 
 
-<img src="Harish-Headshot.png"  width="350" height="350">
+<img src="Harish-Headshot.png"  width="350" height="350"> <img src="Harish-Project.png"  width="350" height="350"> 
   
 # Final Milestone
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qweMNpgBMaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Summary
 My final milestone was achieved when I made my chassis able to move using wireless communication. Previously I had all the joysticks wired directly into the onboard Arduino, however now I have used a wireless module to wire all the joysticks to a separate Arduino, making the two arduinos communicate with each other.
