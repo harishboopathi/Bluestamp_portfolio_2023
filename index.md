@@ -47,9 +47,9 @@ My main challenge was coding my modified arm, I was using the previous arms code
 ## Next steps
 My next step is to make the controller and joysticks wireless as the messy wiring makes it aesthetically unpleasant and restricts the distance I have to be from the claw.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7PaMYvwxk2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
 # First Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7PaMYvwxk2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Summary
 My first milestone was achieved when I managed to control my arm manually and pick up a paper cylinder. I did this by first assembling the arm and utilizing the 3 servo pivots to maneuver my arm in various directions. 
@@ -70,9 +70,10 @@ One main challenge I faced was trying to add my Bluetooth module to control the 
 ## Next steps
 My next step for this project is to create a wireless controller as right now the joysticks have to be plugged into the Arduino shield which is very inconvenient. I also am going to strengthen the arm to hold at least two AA batteries along with putting it on wheels to add more maneuverability to the arm.
 
+# Starter Project
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/bRiTaQy16FM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-# Starter Project
 
 ## Summary
 For my starter project I built a Simon says game. The game works by pushing the rubber pad onto the motherboard to complete the circuit allowing the microcontroller to understand that the button has been pressed. The goal is to click the colors in the order the game displays them using the LEDs. 
@@ -370,13 +371,23 @@ digitalWrite(in1Pin, LOW);
 | **Part** | **Note** | **Price** | **Link** |
 |:--:|:--:|:--:|:--:|
 | Arduino Mega | Controlling the diffrent components on the project chassis | $20.99 | <a href="https://www.amazon.com/ELEGOO-ATmega2560-ATMEGA16U2-Projects-Compliant/dp/B01H4ZLZLQ/ref=asc_df_B01H4ZLZLQ/?tag=hyprod-20&linkCode=df0&hvadid=309743296044&hvpos=&hvnetw=g&hvrand=12020245290984826104&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-490931309987&psc=1"> Link </a> |
+
 | Arduino Nano | Controlling the diffrent components on the transmitter | $10.99 | <a href="https://www.amazon.com/ATmega328P-Microcontroller-Board-Cable-Arduino/dp/B00NLAMS9C/ref=asc_df_B00NLAMS9C/?tag=hyprod-20&linkCode=df0&hvadid=309776868400&hvpos=&hvnetw=g&hvrand=13247452225808741269&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-593018008274&psc=1"> Link </a> |
+
 | Joysticks | inputing commands into the arduino from finger movements  | $8.99 | <a href="https://www.amazon.com/Joystick-Controller-Compatible-Raspberry-PlayStation-2/dp/B0BFQTLM5T/ref=asc_df_B0BFQTLM5T/?tag=hyprod-20&linkCode=df0&hvadid=642135768472&hvpos=&hvnetw=g&hvrand=13644171287524340115&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-1948409564586&psc=1&gclid=CjwKCAjw44mlBhAQEiwAqP3eVoPFrTldpZcr07SQ8AAIVws4saFl-DYrku3biS5c-wGW6YBDUAnmWxoCAzAQAvD_BwE"> Link </a> |
+
 |Breadboard|Simple way to wire components toghther|$5.99|<a href="https://www.amazon.com/Qunqi-point-Experiment-Breadboard-5-5%C3%978-2%C3%970-85cm/dp/B0135IQ0ZC/ref=asc_df_B0135IQ0ZC/?tag=hyprod-20&linkCode=df0&hvadid=198091709182&hvpos=&hvnetw=g&hvrand=4405570806023786270&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-407203040794&psc=1"> Link </a>|
+
 |Jumper wires|Simple way to connect components toghther|$1.99|<a href="https://www.amazon.com/California-JOS-Breadboard-Optional-Multicolored/dp/B0BRTKS564/ref=asc_df_B0BRTKS564/?tag=hyprod-20&linkCode=df0&hvadid=647212027627&hvpos=&hvnetw=g&hvrand=18222000972283283118&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-1970127230798&psc=1&gclid=CjwKCAjw44mlBhAQEiwAqP3eVgX9Ro6C2-pIdNRBWRuUIXtiC51eLeGs1bv-vVlu1md9DSFJQwxU6RoCUEYQAvD_BwE"> Link </a>|
+
 |9v battery|These power all the different components of the project|$12.99|<a href="https://www.amazon.com/Amazon-Basics-Performance-All-Purpose-Batteries/dp/B00MH4QM1S/ref=asc_df_B00MH4QM1S/?tag=hyprod-20&linkCode=df0&hvadid=583815642163&hvpos=&hvnetw=g&hvrand=15720835226961475788&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-332122495433&psc=1"> Link </a>|
+
 |Mechanum wheels|This allows the robot to move in many different directions as they are omnidirectional |$17.99|<a href="https://www.amazon.com/Mecanum-Omnidirectional-Chassis-Diameter-Coupling/dp/B09SH6CM8L/ref=sr_1_16?keywords=mecanum+wheels&qid=1688401409&sr=8-16"> Link </a>|
+
 |TT dc motors|These move the robot wheels making it move|$8.99|<a href="https://www.amazon.com/Bolsen-Motor-Smart-Robot-Gear/dp/B07HQCD6KK/ref=sr_1_26?crid=27KDKN3SUMHDG&keywords=tt+motors&qid=1688401559&sprefix=tt+motors%2Caps%2C237&sr=8-26"> Link </a>|
+
 |LN298 motor driver|This controls the direction speed and power to the dc motors|$6.99|<a href="https://www.amazon.com/Qunqi-Controller-Module-Stepper-Arduino/dp/B014KMHSW6/ref=asc_df_B014KMHSW6/?tag=hyprod-20&linkCode=df0&hvadid=167139094796&hvpos=&hvnetw=g&hvrand=16551378964400391924&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-306436938191&psc=1"> Link </a>|
+
 |nrf24l01+|This allows the two arduinos to communicate with eachother|$7.99|<a href="https://www.amazon.com/HiLetgo-NRF24L01-Wireless-Transceiver-Module/dp/B00LX47OCY/ref=asc_df_B00LX47OCY/?tag=hyprod-20&linkCode=df0&hvadid=380013417597&hvpos=&hvnetw=g&hvrand=188190832787223582&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-815756879405&psc=1&tag=&ref=&adgrpid=77922879259&hvpone=&hvptwo=&hvadid=380013417597&hvpos=&hvnetw=g&hvrand=188190832787223582&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032183&hvtargid=pla-815756879405"> Link </a>|
+
 |Cokoino robotic arm|This is the base arm on the back of the chassis |$49.99|<a href="https://www.amazon.com/LK-COKOINO-Compliment-Engineering-Technology/dp/B081FG1JQ1?ref_=ast_sto_dp"> Link </a>|
